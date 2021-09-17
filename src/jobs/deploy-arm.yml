@@ -1,14 +1,12 @@
 description: >
   Builds arm docker images and pushes them to docker registry
-deploy-arm:
-  executor: build-ubuntu-arm
+executor: build-ubuntu-arm
+environment:
+  BUILD_PLATFORMS: linux/arm/v7,linux/arm64/v8
 
-  environment:
-    BUILD_PLATFORMS: linux/arm/v7,linux/arm64/v8
-
-  steps:
-    - checkout
-    - login-to-dockerhub
-    - enable-buildx
-    - build-docker-image:
-        arch: arm
+steps:
+  - checkout
+  - login-to-dockerhub
+  - enable-buildx
+  - build-docker-image:
+      arch: arm
