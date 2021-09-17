@@ -1,0 +1,10 @@
+description: >
+  Builds docker image with buildx. DOCKER_IMAGE and BUILD_PLATFORMS env vars must be set
+parameters:
+  arch:
+    type: string
+steps:
+  - run:
+      name: Build <<parameters.arch>> image
+      command: |
+        docker buildx build --progress plain --push --platform ${BUILD_PLATFORMS} --tag $DOCKER_IMAGE:$CIRCLE_TAG-<<parameters.arch>> --tag $DOCKER_IMAGE:stable-<<parameters.arch>> .

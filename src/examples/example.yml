@@ -1,13 +1,18 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  Perform release build of docker images
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    bitcartcc: bitcartcc/bitcartcc-shared@1.2.3
   workflows:
-    use-my-orb:
+    deploy:
       jobs:
-        - <orb-name>/<job-name>
+        - bitcartcc/deploy-amd64:
+            context: global
+        - bitcartcc/deploy-arm:
+            context: global
+        - bitcartcc/deploy:
+            context: global
+            requires:
+              - deploy-amd64
+              - deploy-arm

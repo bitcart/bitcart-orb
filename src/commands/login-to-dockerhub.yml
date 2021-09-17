@@ -1,0 +1,7 @@
+description: >
+  Logins to docker hub. DOCKER_USER and DOCKER_PASS env vars must be set
+steps:
+  - run:
+      name: Login to dockerhub
+      command: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS

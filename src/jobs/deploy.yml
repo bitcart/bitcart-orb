@@ -1,0 +1,10 @@
+description: >
+  Creates final docker manifest for built multiarch docker images
+executor: build-ubuntu
+steps:
+  - checkout
+  - login-to-dockerhub
+  - create-docker-manifest:
+      tag: $CIRCLE_TAG
+  - create-docker-manifest:
+      tag: stable

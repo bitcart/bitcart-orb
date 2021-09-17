@@ -1,0 +1,9 @@
+description: >
+  Enables docker buildx for multiarch builds
+steps:
+  - run:
+      name: Enable Docker Buildx
+      command: |
+        sudo apt update
+        sudo apt install qemu qemu-user-static binfmt-support debootstrap -y
+        docker buildx create --name builder --use
