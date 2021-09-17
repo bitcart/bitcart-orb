@@ -5,4 +5,5 @@ machine:
   image: ubuntu-2004:202101-01
 environment:
   DOCKER_CLI_EXPERIMENTAL: enabled
+  BUILD_PLATFORMS: linux/amd64
 resource_class: medium

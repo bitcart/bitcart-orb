@@ -1,9 +1,6 @@
 description: >
   Builds amd64 docker image and pushes it to docker registry
 executor: build-ubuntu
-environment:
-  BUILD_PLATFORMS: linux/amd64
-
 steps:
   - checkout
   - login-to-dockerhub
