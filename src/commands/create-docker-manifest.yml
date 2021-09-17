@@ -1,0 +1,10 @@
+description: >
+  Create docker manifest for multiarch images. DOCKER_IMAGE env var must be set
+parameters:
+  tag:
+    type: string
+steps:
+  - run:
+      name: Create <<parameters.tag>> manifest
+      command: |
+        docker buildx imagetools create -t $DOCKER_IMAGE:<<parameters.tag>> $DOCKER_IMAGE:<<parameters.tag>>-amd64 $DOCKER_IMAGE:<<parameters.tag>>-arm

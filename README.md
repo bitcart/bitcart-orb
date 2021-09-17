@@ -1,10 +1,8 @@
-# Orb Project Template
+# BitcartCC Shared Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/bitcartcc/bitcartcc-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/bitcartcc/bitcartcc-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/bitcartcc/bitcartcc-shared.svg)](https://circleci.com/orbs/registry/orb/bitcartcc/bitcartcc-shared) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/bitcartcc/bitcartcc-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Build Status](https://circleci.com/gh/bitcartcc/bitcartcc-orb.svg?style=svg)](https://circleci.com/gh/bitcartcc/bitcartcc-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/bitcartcc/bitcartcc-shared.svg)](https://circleci.com/orbs/registry/orb/bitcartcc/bitcartcc-shared)
 
-A starter template for orb projects. Build, test, and publish orbs automatically on CircleCI with [Orb-Tools](https://circleci.com/orbs/registry/orb/circleci/orb-tools).
-
-Additional READMEs are available in each directory.
+This orb is used across BitcartCC repositories to reduce duplication and improve maintenance
 
 ## Resources
 
