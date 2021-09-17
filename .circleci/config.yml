@@ -77,7 +77,8 @@ workflows:
           context: orb-publishing
           add-pr-comment: false
           fail-if-semver-not-indicated: true
-          publish-version-tag: false
+          publish-version-tag: true
+          ssh-fingerprints: e2:44:f3:ae:30:1d:30:80:13:8b:6f:d7:c3:bd:66:7f
           requires:
             - integration-test-1
             - integration-test-2
