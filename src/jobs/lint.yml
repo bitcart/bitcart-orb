@@ -3,8 +3,8 @@ description: >
 parameters:
   executor:
     description: "Executor to use"
-    default: "bitcartcc/docker-python"
-    type: string
+    default: bitcartcc/docker-python
+    type: executor
 
 executor: <<parameters.executor>>
 
