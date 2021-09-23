@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.1.1
+
+Fix lint job
+
 ## 1.1.0
 
 Added new docker-python executor and lint job
