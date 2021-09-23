@@ -1,0 +1,31 @@
+description: >
+  Run pre-commit checks
+parameters:
+  executor:
+    description: "Executor to use"
+    default: "bitcartcc/docker-python"
+    type: string
+
+executor: <<parameters.executor>>
+
+steps:
+  - checkout
+
+  - restore_cache:
+      keys:
+        - v1-lint-pre-commit-{{ checksum ".pre-commit-config.yaml" }}
+
+  - run:
+      name: install pre-commit
+      command: |
+        curl https://pre-commit.com/install-local.py | python3 -
+
+  - run:
+      name: run pre-commit checks
+      command: |
+        pre-commit run --all-files --show-diff-on-failure
+
+  - save_cache:
+      paths:
+        - ~/.cache/pre-commit
+      key: v1-lint-pre-commit-{{ checksum ".pre-commit-config.yaml" }}
