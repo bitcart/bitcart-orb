@@ -1,0 +1,9 @@
+description: >
+  Docker executor for regular python builds
+parameters:
+  version:
+    description: "Python version"
+    default: "3.7"
+    type: string
+docker:
+  - image: cimg/python:<<parameters.version>>
