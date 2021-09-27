@@ -5,6 +5,10 @@ parameters:
     description: "Executor to use"
     default: docker-python
     type: executor
+  pre-commit-pip:
+    description: "Install pre-commit via pip"
+    type: boolean
+    default: true
 
 executor: <<parameters.executor>>
 
@@ -15,10 +19,21 @@ steps:
       keys:
         - v1-lint-pre-commit-{{ checksum ".pre-commit-config.yaml" }}
 
-  - run:
-      name: install pre-commit
-      command: |
-        curl https://pre-commit.com/install-local.py | python3 -
+  - when:
+      condition: << parameters.pre-commit-pip >>
+      steps:
+        - run:
+            name: install pre-commit via pip
+            command: |
+              pip install pre-commit
+
+  - unless:
+      condition: << parameters.pre-commit-pip >>
+      steps:
+        - run:
+            name: install pre-commit via script
+            command: |
+              curl https://pre-commit.com/install-local.py | python3 -
 
   - run:
       name: run pre-commit checks
