@@ -18,8 +18,7 @@ parameters:
     type: string
     default: "."
 
-executor:
-  name: <<parameters.executor>>
+executor: <<parameters.executor>>
 
 environment:
   TEST_ARGS: "--junitxml test-results/pytest/coverage.xml --cov-report html:coverage"
@@ -74,4 +73,4 @@ steps:
         make <<parameters.tests-target>>
         codecov -F functional-tests
 
-  - upload-results
+  - upload-test-results

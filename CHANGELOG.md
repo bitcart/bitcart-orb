@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## 1.2.0
 
-Added job for running functional tests and a command to install Fulcrum
+Added job for running functional tests and commands to install Fulcrum and upload test results
 
 ## 1.1.2
 
