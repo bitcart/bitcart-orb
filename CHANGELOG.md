@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.2.0
+
+Added job for running functional tests and a command to install Fulcrum
+
 ## 1.1.2
 
 Fix pre-commit installation failures
