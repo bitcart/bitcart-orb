@@ -5,6 +5,10 @@ parameters:
     description: "Executor to use"
     default: docker-python
     type: executor
+  dependency-steps:
+    description: "Steps to install required base dependencies"
+    type: steps
+    default: []
   tests-target:
     description: Makefile target starting the tests
     type: string
@@ -25,7 +29,7 @@ working_directory: ~/repo
 steps:
   - checkout
 
-  - install_dependencies
+  - steps: << parameters.dependency-steps >>
 
   - run:
       name: install regtest utils
