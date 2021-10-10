@@ -1,0 +1,76 @@
+description: >
+  Run functional tests
+parameters:
+  executor:
+    description: "Executor to use"
+    default: docker-python
+    type: executor
+  dependency-steps:
+    description: "Steps to install required base dependencies"
+    type: steps
+    default: []
+  tests-target:
+    description: Makefile target starting the tests
+    type: string
+    default: functional
+  daemon-dir:
+    description: "Daemon directory"
+    type: string
+    default: "."
+
+executor: <<parameters.executor>>
+
+environment:
+  TEST_ARGS: "--junitxml test-results/pytest/coverage.xml --cov-report html:coverage"
+
+working_directory: ~/repo
+
+steps:
+  - checkout
+
+  - steps: << parameters.dependency-steps >>
+
+  - run:
+      name: install regtest utils
+      command: |
+        sudo add-apt-repository -y ppa:luke-jr/bitcoincore
+        sudo apt update
+        sudo apt install -y bitcoind
+        sudo apt install screen
+
+  - install-fulcrum
+
+  - run:
+      name: prepare bitcoind
+      command: |
+        make bitcoind
+      background: true
+
+  - run:
+      name: prepare fulcrum
+      command: |
+        make fulcrum
+      background: true
+
+  - run:
+      name: prepare regtest daemon
+      command: |
+        cd <<parameters.daemon-dir>>
+        make regtest
+      background: true
+
+  - run:
+      name: prepare regtest ln daemon
+      command: |
+        cd <<parameters.daemon-dir>>
+        make regtestln
+      background: true
+
+  - run:
+      name: run tests
+      command: |
+        sleep 10s
+        make <<parameters.tests-target>>
+        codecov -F functional-tests
+
+  - upload-test-results

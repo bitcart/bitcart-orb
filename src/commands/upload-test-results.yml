@@ -1,0 +1,11 @@
+description: >
+  Upload test artifacts
+steps:
+  - store_test_results:
+      path: test-results
+
+  - store_artifacts:
+      path: coverage
+
+  - store_artifacts:
+      path: test-results
