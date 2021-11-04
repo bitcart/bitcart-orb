@@ -49,6 +49,7 @@ steps:
   - run:
       name: prepare fulcrum
       command: |
+        sleep 10s
         make fulcrum
       background: true
 
@@ -56,12 +57,14 @@ steps:
       name: prepare regtest daemon
       command: |
         cd <<parameters.daemon-dir>>
+        sleep 10s
         make regtest
       background: true
 
   - run:
       name: prepare regtest ln daemon
       command: |
+        sleep 10s
         cd <<parameters.daemon-dir>>
         make regtestln
       background: true
@@ -69,7 +72,7 @@ steps:
   - run:
       name: run tests
       command: |
-        sleep 10s
+        sleep 15s
         make <<parameters.tests-target>>
         codecov -F functional-tests
 
