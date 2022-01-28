@@ -9,15 +9,22 @@ parameters:
     description: "Install pre-commit via pip"
     type: boolean
     default: true
+  cache-run-data:
+    description: "Cache pre-commit repositories and other data"
+    type: boolean
+    default: true
 
 executor: <<parameters.executor>>
 
 steps:
   - checkout
 
-  - restore_cache:
-      keys:
-        - v1-lint-pre-commit-{{ checksum ".pre-commit-config.yaml" }}
+  - when:
+      condition: << parameters.cache-run-data >>
+      steps:
+        - restore_cache:
+            keys:
+              - v1-lint-{{ .Branch }}-pre-commit-{{ checksum ".pre-commit-config.yaml" }}
 
   - when:
       condition: << parameters.pre-commit-pip >>
@@ -40,7 +47,10 @@ steps:
       command: |
         pre-commit run --all-files --show-diff-on-failure
 
-  - save_cache:
-      paths:
-        - ~/.cache/pre-commit
-      key: v1-lint-pre-commit-{{ checksum ".pre-commit-config.yaml" }}
+  - when:
+      condition: << parameters.cache-run-data >>
+      steps:
+        - save_cache:
+            paths:
+              - ~/.cache/pre-commit
+            key: v1-lint-{{ .Branch }}-pre-commit-{{ checksum ".pre-commit-config.yaml" }}

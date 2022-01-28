@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.4.0
+
+Fixed lint job pre-commit data directories caching and allowed to disable it
+
 ## 1.3.0
 
 Made functional tests not flaky
