@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.5.0
+
+Added new python-node executor and command to install node.js package dependencies
+
 ## 1.4.0
 
 Fixed lint job pre-commit data directories caching and allowed to disable it
