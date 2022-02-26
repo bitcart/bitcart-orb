@@ -1,0 +1,9 @@
+description: >
+  Executor for python+node builds
+parameters:
+  version:
+    description: "Python version"
+    default: "3.9"
+    type: string
+docker:
+  - image: cimg/python:<<parameters.version>>-node
