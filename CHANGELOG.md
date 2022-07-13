@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.6.0
+
+Python 3.8 is now the default for all jobs
+
 ## 1.5.0
 
 Added new python-node executor and command to install node.js package dependencies

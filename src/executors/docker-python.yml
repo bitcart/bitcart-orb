@@ -3,7 +3,7 @@ description: >
 parameters:
   version:
     description: "Python version"
-    default: "3.7"
+    default: "3.8"
     type: string
 docker:
   - image: cimg/python:<<parameters.version>>
