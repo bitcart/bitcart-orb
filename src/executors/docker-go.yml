@@ -1,0 +1,11 @@
+description: >
+  Docker executor for regular golang builds
+parameters:
+  version:
+    description: "Golang version"
+    default: "1.18"
+    type: string
+docker:
+  - image: cimg/go:<<parameters.version>>
+environment:
+  CGO_ENABLED: 0

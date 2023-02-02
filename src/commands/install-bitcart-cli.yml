@@ -1,0 +1,30 @@
+description: >
+  Installs the latest bitcart-cli version from github
+parameters:
+  use-go:
+    description: "Install bitcart-cli via go"
+    type: boolean
+    default: true
+
+steps:
+  - when:
+      condition: << parameters.use-go >>
+      steps:
+        - run:
+            name: Install bitcart-cli (via go install)
+            command: |
+              go install github.com/bitcartcc/bitcart-cli@latest
+
+  - unless:
+      condition: << parameters.use-go >>
+      steps:
+        - run:
+            name: Install bitcart-cli (via github releases)
+            command: |
+              OS=$(uname -s)
+              ARCH=$(uname -m)
+              if [[ "$ARCH" == "x86_64" ]]; then
+                  ARCH="amd64"
+              fi
+              sudo curl -L "https://github.com/bitcartcc/bitcart-cli/releases/latest/download/bitcart-cli-$OS-$ARCH" -o /usr/local/bin/bitcart-cli
+              sudo chmod +x /usr/local/bin/bitcart-cli
