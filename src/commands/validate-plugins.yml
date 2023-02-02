@@ -1,0 +1,17 @@
+description: >
+  Validates all plugins in current directory
+parameters:
+  directory:
+    type: string
+    default: "."
+steps:
+  - run:
+      name: Validate BitcartCC plugins
+      command: |
+        if [ -f "<<parameters.directory>>/manifest.json" ]; then
+          bitcart-cli plugin validate "<<parameters.directory>>"
+        else
+          for dir in "<<parameters.directory>>"/*/; do
+            bitcart-cli plugin validate "<<parameters.directory>>/$dir"
+          done
+        fi

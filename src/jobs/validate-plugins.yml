@@ -1,0 +1,25 @@
+description: >
+  Validate BitcartCC plugins
+parameters:
+  executor:
+    description: "Executor to use"
+    default: docker-go
+    type: executor
+  directory:
+    type: string
+    default: "."
+  use-go:
+    description: "Install bitcart-cli via go"
+    type: boolean
+    default: true
+
+executor: <<parameters.executor>>
+
+steps:
+  - checkout
+
+  - install-bitcart-cli:
+      use-go: <<parameters.use-go>>
+
+  - validate-plugins:
+      directory: <<parameters.directory>>

@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.8.0
+
+Added new docker-go executor.
+
+New commands: install-bitcart-cli and validate-plugins.
+
+New job: validate-plugins
+
 ## 1.7.1
 
 Fix pre-commit setup without pip
