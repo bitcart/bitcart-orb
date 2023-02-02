@@ -12,6 +12,6 @@ steps:
           bitcart-cli plugin validate "<<parameters.directory>>"
         else
           for dir in "<<parameters.directory>>"/*/; do
-            bitcart-cli plugin validate "<<parameters.directory>>/$dir"
+            bitcart-cli plugin validate "$dir"
           done
         fi
