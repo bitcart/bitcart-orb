@@ -40,7 +40,10 @@ steps:
         - run:
             name: install pre-commit via script
             command: |
-              curl https://pre-commit.com/install-local.py | python3 -
+              curl --silent --location -o virtualenv.pyz https://bootstrap.pypa.io/virtualenv.pyz
+              python3 virtualenv.pyz ~/.pre-commit-venv
+              ~/.pre-commit-venv/bin/pip install pre-commit
+              ln -s ~/.pre-commit-venv/bin/pre-commit ~/bin/pre-commit
 
   - run:
       name: run pre-commit checks
