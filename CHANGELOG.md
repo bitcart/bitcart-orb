@@ -6,6 +6,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.7.1
+
+Fix pre-commit setup without pip
+
+## 1.7.0
+
+Remove arm32 from list of build platforms
+
 ## 1.6.0
 
 Python 3.8 is now the default for all jobs
