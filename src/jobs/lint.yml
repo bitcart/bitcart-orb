@@ -32,7 +32,7 @@ steps:
         - run:
             name: install pre-commit via pip
             command: |
-              pip install pre-commit
+              python3 -m pip install pre-commit
 
   - unless:
       condition: << parameters.pre-commit-pip >>
