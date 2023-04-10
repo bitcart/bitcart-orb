@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.8.4
+
+Fix permission issues when installing Fulcrum
+
 ## 1.8.3
 
 Fix pip install not working in some cases

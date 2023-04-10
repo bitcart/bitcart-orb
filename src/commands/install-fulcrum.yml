@@ -10,4 +10,5 @@ steps:
         mkdir -p Fulcrum
         tar -xvzf $ARCHIVE_NAME -C Fulcrum
         sudo cp Fulcrum/${ARCHIVE_NAME/.tar.gz/}/Fulcrum /usr/local/bin/Fulcrum
+        sudo chmod +x /usr/local/bin/Fulcrum
         rm -rf $ARCHIVE_NAME Fulcrum
