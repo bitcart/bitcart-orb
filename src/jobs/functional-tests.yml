@@ -74,6 +74,8 @@ steps:
       command: |
         sleep 15s
         make <<parameters.tests-target>>
-        codecov -F functional-tests
+
+  - codecov:
+      args: "-F functional-tests"
 
   - upload-test-results
