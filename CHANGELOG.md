@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.10.0
+
+Publish to multiple docker registries
+
 ## 1.9.0
 
 New command to do uploads to codecov, fixed functional tests due to deprecation of codecov python uploader

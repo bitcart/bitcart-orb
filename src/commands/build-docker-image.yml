@@ -7,4 +7,7 @@ steps:
   - run:
       name: Build <<parameters.arch>> image
       command: |
-        docker buildx build --progress plain --push --platform ${BUILD_PLATFORMS} --tag $DOCKER_IMAGE:$CIRCLE_TAG-<<parameters.arch>> --tag $DOCKER_IMAGE:stable-<<parameters.arch>> .
+        docker buildx build --progress plain --push --platform ${BUILD_PLATFORMS} \
+        --tag $DOCKER_IMAGE:$CIRCLE_TAG-<<parameters.arch>> --tag $DOCKER_IMAGE:stable-<<parameters.arch>> \
+        --tag ghcr.io/$DOCKER_IMAGE:$CIRCLE_TAG-<<parameters.arch>> --tag ghcr.io/$DOCKER_IMAGE:stable-<<parameters.arch>> \
+        --tag harbor.nirvati.org/$DOCKER_IMAGE:$CIRCLE_TAG-<<parameters.arch>> --tag harbor.nirvati.org/$DOCKER_IMAGE:stable-<<parameters.arch>> .

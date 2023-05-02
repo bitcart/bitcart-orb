@@ -1,0 +1,9 @@
+description: >
+  Logins to all supported container registries
+steps:
+  - run:
+      name: Login to registries
+      command: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+        docker login ghcr.io -u $GHCR_USER -p $GHCR_PASS
+        docker login harbor.nirvati.org -u $NITVATI_USER -p $NITVATI_PASS
