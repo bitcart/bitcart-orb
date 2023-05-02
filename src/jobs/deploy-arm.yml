@@ -3,7 +3,7 @@ description: >
 executor: build-ubuntu-arm
 steps:
   - checkout
-  - login-to-dockerhub
+  - login-to-registries
   - enable-buildx
   - build-docker-image:
       arch: arm

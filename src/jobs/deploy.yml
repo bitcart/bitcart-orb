@@ -3,7 +3,7 @@ description: >
 executor: build-ubuntu
 steps:
   - checkout
-  - login-to-dockerhub
+  - login-to-registries
   - create-docker-manifest:
       tag: $CIRCLE_TAG
   - create-docker-manifest:
