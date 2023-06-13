@@ -3,15 +3,15 @@ description: >
 usage:
   version: 2.1
   orbs:
-    bitcartcc: bitcartcc/bitcartcc-shared@1.2.3
+    bitcart: bitcart/bitcart-shared@1.2.3
   workflows:
     deploy:
       jobs:
-        - bitcartcc/deploy-amd64:
+        - bitcart/deploy-amd64:
             context: global
-        - bitcartcc/deploy-arm:
+        - bitcart/deploy-arm:
             context: global
-        - bitcartcc/deploy:
+        - bitcart/deploy:
             context: global
             requires:
               - deploy-amd64

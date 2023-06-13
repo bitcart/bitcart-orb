@@ -13,7 +13,7 @@ steps:
         - run:
             name: Install bitcart-cli (via go install)
             command: |
-              go install github.com/bitcartcc/bitcart-cli@latest
+              go install github.com/bitcart/bitcart-cli@latest
 
   - unless:
       condition: << parameters.use-go >>
@@ -26,5 +26,5 @@ steps:
               if [[ "$ARCH" == "x86_64" ]]; then
                   ARCH="amd64"
               fi
-              sudo curl -L "https://github.com/bitcartcc/bitcart-cli/releases/latest/download/bitcart-cli-$OS-$ARCH" -o /usr/local/bin/bitcart-cli
+              sudo curl -L "https://github.com/bitcart/bitcart-cli/releases/latest/download/bitcart-cli-$OS-$ARCH" -o /usr/local/bin/bitcart-cli
               sudo chmod +x /usr/local/bin/bitcart-cli

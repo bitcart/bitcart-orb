@@ -1,8 +1,8 @@
 version: 2.1
 
 description: >
-  BitcartCC shared config presets
+  Bitcart shared config presets
 
 display:
-  home_url: "https://bitcartcc.com"
-  source_url: "https://github.com/bitcartcc/bitcartcc-orb"
+  home_url: "https://bitcart.ai"
+  source_url: "https://github.com/bitcart/bitcart-orb"

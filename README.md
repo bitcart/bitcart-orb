@@ -1,17 +1,17 @@
-# BitcartCC Shared Orb
+# Bitcart Shared Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/bitcartcc/bitcartcc-orb.svg?style=svg)](https://circleci.com/gh/bitcartcc/bitcartcc-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/bitcartcc/bitcartcc-shared.svg)](https://circleci.com/orbs/registry/orb/bitcartcc/bitcartcc-shared)
+[![CircleCI Build Status](https://circleci.com/gh/bitcart/bitcart-orb.svg?style=svg)](https://circleci.com/gh/bitcart/bitcart-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/bitcart/bitcart-shared.svg)](https://circleci.com/orbs/registry/orb/bitcart/bitcart-shared)
 
-This orb is used across BitcartCC repositories to reduce duplication and improve maintenance
+This orb is used across Bitcart repositories to reduce duplication and improve maintenance
 
 ## Resources
 
-[CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/bitcartcc/bitcartcc-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
+[CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/bitcart/bitcart-orb) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using and creating CircleCI Orbs.
 
 ### How to Contribute
 
-We welcome [issues](https://github.com/bitcartcc/bitcartcc-orb/issues) to and [pull requests](https://github.com/bitcartcc/bitcartcc-orb/pulls) against this repository!
+We welcome [issues](https://github.com/bitcart/bitcart-orb/issues) to and [pull requests](https://github.com/bitcart/bitcart-orb/pulls) against this repository!
 
 ### How to Publish
 

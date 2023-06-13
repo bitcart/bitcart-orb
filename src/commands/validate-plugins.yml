@@ -6,7 +6,7 @@ parameters:
     default: "."
 steps:
   - run:
-      name: Validate BitcartCC plugins
+      name: Validate Bitcart plugins
       command: |
         if [ -f "<<parameters.directory>>/manifest.json" ]; then
           bitcart-cli plugin validate "<<parameters.directory>>"
