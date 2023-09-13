@@ -2,8 +2,7 @@ description: >
   Machine executor for arm builds
 machine:
   enabled: true
-  image: ubuntu-2004:202101-01
+  image: ubuntu-2204:2023.07.2
 environment:
-  DOCKER_CLI_EXPERIMENTAL: enabled
   BUILD_PLATFORMS: linux/arm64/v8
 resource_class: arm.medium
