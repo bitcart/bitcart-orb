@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 1.11.0
+
+Disable nirvati for now
+
 ## 1.10.0
 
 Publish to multiple docker registries
