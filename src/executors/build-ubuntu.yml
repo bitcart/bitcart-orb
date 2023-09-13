@@ -2,8 +2,7 @@ description: >
   Machine executor for amd64 builds
 machine:
   enabled: true
-  image: ubuntu-2004:202101-01
+  image: ubuntu-2204:2023.07.2
 environment:
-  DOCKER_CLI_EXPERIMENTAL: enabled
   BUILD_PLATFORMS: linux/amd64
 resource_class: medium
