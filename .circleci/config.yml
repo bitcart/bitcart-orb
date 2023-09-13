@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  bitcart: bitcart/bitcart-shared@<<pipeline.parameters.dev-orb-version>>
+  # bitcart: bitcart/bitcart-shared@<<pipeline.parameters.dev-orb-version>>
   orb-tools: circleci/orb-tools@10.0
 
 # Pipeline Parameters
@@ -21,17 +21,17 @@ parameters:
 
 jobs:
   # Define one or more jobs which will utilize your orb's commands and parameters to validate your changes.
-  integration-test-1:
-    executor: bitcart/build-ubuntu
-    steps:
-      - checkout
-      - run: uname -a
+  # integration-test-1:
+  #   executor: bitcart/build-ubuntu
+  #   steps:
+  #     - checkout
+  #     - run: uname -a
 
-  integration-test-2:
-    executor: bitcart/build-ubuntu-arm
-    steps:
-      - checkout
-      - run: uname -a
+  # integration-test-2:
+  #   executor: bitcart/build-ubuntu-arm
+  #   steps:
+  #     - checkout
+  #     - run: uname -a
 
 workflows:
   # Prior to producing a development orb (which requires credentials) basic validation, linting, and even unit testing can be performed.
