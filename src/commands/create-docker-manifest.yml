@@ -8,5 +8,4 @@ steps:
       name: Create <<parameters.tag>> manifest
       command: |
         docker buildx imagetools create -t $DOCKER_IMAGE:<<parameters.tag>> \
-        -t ghcr.io/$DOCKER_IMAGE:<<parameters.tag>> \
-        -t harbor.nirvati.org/$DOCKER_IMAGE:<<parameters.tag>> $DOCKER_IMAGE:<<parameters.tag>>-amd64 $DOCKER_IMAGE:<<parameters.tag>>-arm
+        -t ghcr.io/$DOCKER_IMAGE:<<parameters.tag>> $DOCKER_IMAGE:<<parameters.tag>>-amd64 $DOCKER_IMAGE:<<parameters.tag>>-arm
