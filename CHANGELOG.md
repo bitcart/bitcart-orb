@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 2.2.0
+
+Python 3.9 is now the default for all jobs
+
 ## 2.1.1
 
 Update build-ubuntu machine version
