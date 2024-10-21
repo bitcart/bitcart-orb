@@ -5,5 +5,5 @@ steps:
       name: Enable Docker Buildx
       command: |
         sudo apt update
-        sudo apt install qemu qemu-user-static binfmt-support debootstrap -y
+        sudo apt install qemu-system qemu-user-static binfmt-support debootstrap -y
         docker buildx create --name builder --use

@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 2.3.1
+
+Fix multiarch builds
+
 ## 2.3.0
 
 Upgrade machine ubuntu images
