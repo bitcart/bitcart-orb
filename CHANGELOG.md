@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+## 2.6.0
+
+Python 3.12 is now the default for all jobs
+
 ## 2.5.0
 
 Golang 1.23 is now the default for all jobs
