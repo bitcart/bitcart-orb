@@ -3,7 +3,7 @@ description: >
 parameters:
   version:
     description: "Golang version"
-    default: "1.23"
+    default: "1.25"
     type: string
 docker:
   - image: cimg/go:<<parameters.version>>
